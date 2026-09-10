@@ -23,7 +23,6 @@ class Solution(object):
             else:
                 print(False)
 #column
-
         for i in range(9):
             clist = []
             for row in board:
