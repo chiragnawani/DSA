@@ -14,6 +14,8 @@ class Solution(object):
                 return True
             else:
                 return False
+
+                
         valid = True
         count = 0
         for row in board:
@@ -60,6 +62,6 @@ class Solution(object):
                 else:
                     print(False)
         if count:
-            return False
+            return 
         else:
             return True
