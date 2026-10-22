@@ -33,8 +33,10 @@ public:
                 if(area<currarea){
                     area = currarea;
                 }
-                st.pop();
+                 st.pop();
             }
         return area;
+
+
     }
 };
