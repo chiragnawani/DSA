@@ -48,6 +48,9 @@ public class Main {
         continue;
       }
     }
+    if(j==n){
+      if(!placed)
+    }
     return board;
   };
     public static void main(String[] args) {
