@@ -35,23 +35,24 @@ public class Main {
     }
     return true;
   }
-  static int[][] checkSafe(int i, int j, int[][] board, int n){
+  static boolean checkSafe(int i, int j, int[][] board, int n){
     if(i==n){
-      return board;
+      return true;
     }
     while(j<n){
       if(isSafe(i,j,board,n)){
         board[i][j] = 1;
-        board = checkSafe(i+1,0,board,n);
+        if(checkSafe(i+1,0,board,n)){
+          return true
+        }else{
+        board[i][j] = 0;
+        j++;
+        }
       }else{
         j++;
-        continue;
       }
     }
-    if(j==n){
-      if(!placed)
-    }
-    return board;
+    return false;
   };
     public static void main(String[] args) {
       int[][] board = new int[4][4];
