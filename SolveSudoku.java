@@ -11,15 +11,40 @@ class SolveSudoku{
     {'.', '.', '.', '4', '1', '9', '.', '.', '5'},
     {'.', '.', '.', '.', '8', '.', '.', '7', '9'}
     };
-    boolean checkSafe(int[][] a, i, j){
+    boolean checkSafe(char[][] a, int i, int j){
+        //bas case
         if(i==n){
             return true;
         }
-        while(j<n){
-            safevalues = findsafevalues(i,j);
-            val = safeValues[0];
-            if(isSafe(i,j,val)){
-                
+        //next position
+        int nexti;
+        int nextj;
+        
+        if(j==n-1){
+            nexti = i+1;
+            nextj=0;
+        }else{
+            nextj=j+1;
+            nexti = i;
+        }
+        if(a[i][j]!='.'){
+            return checkSafe(a,nexti,nextj);
+        }else{
+            safeValues = findSafeValues(a,i,j);
+            if(safeValues.length == 0){
+                return false;
+            }else{
+                int index = 0;
+                while(index<safeValues.length){
+                    a[i][j] = safeValues[index];
+                    if(checkSafe(a,nexti,nextj)){
+                        return true;
+                    }else{
+                        a[i][j] = '.';
+                        index++;
+                    }
+                }
+                return false;
             }
         }
     }
