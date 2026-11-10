@@ -12,7 +12,7 @@ class SolveSudoku{
     {'.', '.', '.', '.', '8', '.', '.', '7', '9'}
     };
     boolean checkSafe(char[][] a, int i, int j){
-        //bas case
+        //base case
         if(i==n){
             return true;
         }
@@ -51,5 +51,6 @@ class SolveSudoku{
     public static void main(String[] args){
 
         boolean solution = checkSafe(a, 0, 0);
+        sop
     }
 }
