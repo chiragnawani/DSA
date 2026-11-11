@@ -51,6 +51,5 @@ class SolveSudoku{
     public static void main(String[] args){
 
         boolean solution = checkSafe(a, 0, 0);
-        sop
     }
 }
