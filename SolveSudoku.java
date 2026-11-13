@@ -64,7 +64,9 @@ class SolveSudoku{
         if(i==9){
             return true;
         }
+        
         //next position
+
         int nexti;
         int nextj;
         
@@ -75,6 +77,7 @@ class SolveSudoku{
             nextj=j+1;
             nexti = i;
         }
+        
         if(a[i][j]!='.'){
             return checkSafe(a,nexti,nextj);
         }else{
