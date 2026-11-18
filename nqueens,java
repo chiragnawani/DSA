@@ -11,6 +11,7 @@ public class Main {
         return false;
       }
     }
+    
     row = i;
     col = j;
     //RightDiagonalCheck
@@ -23,6 +24,9 @@ public class Main {
         return false;
       }
     }
+
+    row = i;
+    col = j;
     //LeftDiagonalCheck
     while(row>=0 && col>=0 && col<n && row<n){
       row--;
@@ -35,15 +39,17 @@ public class Main {
     }
     return true;
   }
+
   static boolean checkSafe(int i, int j, int[][] board, int n){
     if(i==n){
       return true;
     }
+
     while(j<n){
       if(isSafe(i,j,board,n)){
         board[i][j] = 1;
         if(checkSafe(i+1,0,board,n)){
-          return true
+          return true;
         }else{
         board[i][j] = 0;
         j++;
@@ -55,10 +61,16 @@ public class Main {
     return false;
   };
     public static void main(String[] args) {
-      int[][] board = new int[4][4];
-      int j = 0, n = 4;
-      for(int i = 0; i < n; i++){
-        int[][] solution = checkSafe(i,j,board,n);
+      int n = 4;
+      int[][] board = new int[n][n];
+      int j = 0;
+      boolean solution = checkSafe(0,0,board,n);
+      if(solution){
+        for(int i = 0; i<n; i++){
+          for(int j = 0; j < n; j++){
+            
+          }
+        }
       }
     }
 }
