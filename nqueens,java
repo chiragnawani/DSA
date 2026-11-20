@@ -11,7 +11,6 @@ public class Main {
         return false;
       }
     }
-    
     row = i;
     col = j;
     //RightDiagonalCheck
@@ -24,7 +23,6 @@ public class Main {
         return false;
       }
     }
-
     row = i;
     col = j;
     //LeftDiagonalCheck
@@ -39,12 +37,10 @@ public class Main {
     }
     return true;
   }
-
   static boolean checkSafe(int i, int j, int[][] board, int n){
     if(i==n){
       return true;
     }
-
     while(j<n){
       if(isSafe(i,j,board,n)){
         board[i][j] = 1;
